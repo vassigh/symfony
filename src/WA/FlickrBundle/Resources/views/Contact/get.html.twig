@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    </head>
+    <title>TP Flickr</title>
+    <link rel="stylesheet" href="{{asset('bundles/waflickr/css/flickr.css')}}"> 
+    <meta charset="utf-8">	
+
+    <body>
+
+	{% for message in app.session.Flashbag.get('notice') %}
+
+		<div class="Flash-notice">
+			{{message}}
+		</div>
+	{% endfor %}
+
+
+		{{  form_start(contactForm, { attr: { 'class': 'ma_class'}})  }}  
+
+		<fieldset>
+				<legend> Formulaire de contact </legend>
+				<ul>
+					<li>
+					  {{form_label(contactForm.firstname, 'Prénom:')}}
+					  {{form_widget(contactForm.firstname)}}
+					</li>
+					<li>
+					  {{form_label(contactForm.lastname, 'Nom:' )}}
+					  {{form_widget(contactForm.lastname)}}
+					</li>
+					<li>
+					  {{form_label(contactForm.email, 'email:')}}
+					  {{form_widget(contactForm.email)}}
+					</li>
+					<li>
+					  {{form_label(contactForm.message, 'Message:')}}
+					  {{form_widget(contactForm.message)}}
+					</li>
+					<li>
+					  {{form_widget(contactForm.send, {label: "Envoyez votre message"}) }}
+					</li>
+				</ul>
+		</fieldset>
+
+		{{ form_end(contactForm)}}            
+
+    </body>
+
+</html>

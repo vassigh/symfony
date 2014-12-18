@@ -1,0 +1,45 @@
+wa_flickr_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WAFlickrBundle:Default:index }
+
+
+# nouveau controleur hello world
+wa_flickr_helloworld:
+    path:     /hello-world/{name}/{age}
+    defaults: { _controller: WAFlickrBundle:Hello:index, name: Bryan, age: connais-pas! }
+    requirements:
+        name: ^([A-z éà]+)$
+        age: \d+
+
+
+wa_flickr_contact_get:
+    path:     /contact
+    defaults: { _controller: WAFlickrBundle:Contact:get }
+    requirements:
+        _method: GET
+
+
+wa_flickr_contact_post:
+    path:     /contact
+    defaults: { _controller: WAFlickrBundle:Contact:post }
+    requirements: 
+        _method: POST
+
+
+wa_flickr_search_flickr_get:
+    path:     /search
+    defaults: { _controller: WAFlickrBundle:Search:get }
+    requirements:
+        _method: GET
+
+
+wa_flickr_search_flickr_post:
+    path:     /search
+    defaults: { _controller: WAFlickrBundle:Search:post }
+    requirements:
+        _method: POST
+
+
+wa_flickr_search_getInfo:
+    path:     /photo/{farm}/{id}/{server}/{secret}
+    defaults: { _controller: WAFlickrBundle:Search:view }

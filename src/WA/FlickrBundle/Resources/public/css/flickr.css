@@ -1,0 +1,126 @@
+body {
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+h1.title {
+    font-size: 45px;
+    padding-bottom: 0px;
+    padding-top: 50px;
+    color: red;
+    text-align: center;
+}
+
+h2.sous_titre {
+    font-size: 20px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+h3{
+    margin-top:100px;
+    margin-left: 100px; 
+    color: #A15A75;
+}
+
+
+fieldset{
+    margin-left: 100px; 
+}
+
+.ma_class{
+     width:800px; 
+}
+
+.ma_class label{
+     display: inline-block;
+     width:100px; 
+     font-size: 18px;
+}
+
+.ma_class input{
+    display: inline-block;
+     width:400px; 
+}
+
+.ma_class select{
+    display: inline-block;
+     width:70px; 
+}
+
+.ma_class button{
+    display: inline-block;
+     width:100px; 
+     font-size: 15px;
+}
+
+
+
+a{
+    margin-right: 10px;
+}
+
+li{
+    list-style-type: none; 
+    margin-bottom: 20px;
+}
+
+
+.Flash-notice{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: blue;
+}
+
+
+textarea{
+    margin-left: 8%;
+}
+
+.pagination{
+    text-align: center;
+}
+
+.modifier{
+    text-align: center;
+}
+
+
+.formulaire_flickr{
+
+}
+
+.div_image{
+    margin-top: 50px;
+}
+
+.image{
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.photo_view{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    border-style: double;
+    border-width: 12px;
+    border-color: black;
+    padding: 10px;
+}
+
+.photo_view_description {
+    font-style: italic;
+    text-align: left;
+    text-align: justify;
+}
+
+.photo_view_titre {
+    font-size: 15pt;
+    text-align: center;
+}
+
+.photo_view_image {
+    padding-left: 30%;
+}

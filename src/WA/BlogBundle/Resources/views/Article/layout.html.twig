@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    <head>
+	    <title> {% block titre %} Layout {% endblock %} </title>
+	    <link rel="stylesheet" href="{{asset('bundles/wablog/css/flickr.css')}}">
+	    <meta charset="utf-8">	
+	</head>
+
+    <body>
+
+
+			<div>
+				{% block content %} c'est l'artcicle: <br>
+				 {% endblock %} 
+			</div>
+
+			<p class="modifier">
+				<a href='{{ path( 'wa_blog_article_layout') }}'>
+	                <input type="button" value="Modifier">
+	            </a>
+            </p>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

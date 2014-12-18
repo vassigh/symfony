@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    </head>
+    <title>TP Flickr infos photo</title>
+    <link rel="stylesheet" href="{{asset('bundles/waflickr/css/flickr.css')}}"> 
+    <meta charset="utf-8">	
+
+    <body>
+    	<div class="photo_view">
+			<p class="photo_view_titre"> {{titre}}</p>
+			<img class="photo_view_image" src="{{image}}" title="toto" alt="toto"/>
+			<p class="photo_view_description"> {{description|raw}}</p> 
+		</div>
+    </body>
+
+</html>
+

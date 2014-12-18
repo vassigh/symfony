@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    </head>
+    <title>TP Flickr</title>
+    <link rel="stylesheet" href="{{asset('bundles/waflickr/css/flickr.css')}}"> 
+    <meta charset="utf-8">	
+
+    <body>
+
+	{% for message in app.session.Flashbag.get('notice') %}
+
+		<div class="Flash-notice">
+			{{message}}
+		</div>
+	{% endfor %}
+
+		<h3>Contact Bonjour!</h3>
+
+		{{  form_start(searchForm, { attr: { 'class': 'ma_class'}})  }}  
+
+		<fieldset>
+				<legend> Recherche des photos </legend>
+				<ul>
+					<li>
+					  {{form_label(searchForm.tags, 'Tags:')}}
+					  {{form_widget(searchForm.tags)}} 
+					</li>
+					<li>
+					  {{form_label(searchForm.maximum, 'Maximum:' )}}
+					  {{form_widget(searchForm.maximum)}}
+					</li>
+					<li>
+					  {{form_label(searchForm.taille, 'Taille:' )}}
+					  {{form_widget(searchForm.taille)}}
+					</li>
+					<li>
+					  {{form_widget(searchForm.send, {label: "Rechercher"}) }}
+					</li>
+				</ul>
+		</fieldset>
+
+		{{ form_end(searchForm)}}   
+
+		{% if photos is defined %}
+			{% if photos is empty %}
+				<p class="aucune_photo">Aucune photo trouvée</p>
+			{% else %}
+
+				<div class="div_image">
+					{% for photo in photos %}
+					<a href="
+							{{
+								path('wa_flickr_search_getInfo', 
+								{
+									'farm'  : photo.farm,
+									'id'    : photo.id,
+									'server': photo.server,
+									'secret': photo.secret,
+									'taille': photo.taille
+								})
+
+							}}"><img class="image" src="{{photo.url}}" 
+						    title="{{photo.title}}" 
+						    alt="{{photo.title}}"/></a>
+					{% endfor %}
+				</div>
+
+			{% endif %} 		
+		{% endif %}        
+
+    </body>
+
+</html>
+

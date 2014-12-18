@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    </head>
+    <title>TP Flickr</title>
+    <link rel="stylesheet" href="{{asset('bundles/waflickr/css/flickr.css')}}">
+    <meta charset="utf-8">	
+
+    <body>
+			<h1 class="title">Flickr avec Symfony2</h1>
+			<h2> Hello! {{ name|upper }}</h2>
+			<h2>Tu as {{ age }} ans</h2>
+			{% if age > 60 %} <p>vous êtes vieux</p>  
+			{% else %} <p>vous êtes jeune</p>  
+			{% endif %}
+			
+	{#		<a href='{{url}}'>Dites bonjour à Brayan</a> #}
+
+			<a href='{{ path( 'wa_flickr_helloworld', {'name':"Bryan", 'age':40} ) }}'>Dites bonjour à Bryan</a>
+    </body>
+
+</html>

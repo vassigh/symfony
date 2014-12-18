@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    <head>
+	    <title>TP Flickr</title>
+	    <link rel="stylesheet" href="{{asset('bundles/wablog/css/flickr.css')}}">
+	    <meta charset="utf-8">	
+	</head>
+
+    <body>
+		<h1 class="title">Flickr avec Symfony2</h1>
+		<h2 class="sous_titre"> On affiche la page : {{ page }}</h2>
+
+		<p class="pagination">
+			{% set page_suivante = page+1 %}
+
+			<a href='{{ path( 'wa_blog_accueil', {'page': page_suivante} ) }}'>Page suivante</a>
+
+			{% if page > 1 %}
+			  {% set page_precedente = page-1 %} 
+			  <a href='{{ path( 'wa_blog_accueil', {'page': page_precedente} ) }}'>Page précédente</a>
+			{% endif %}
+		</p>
+    </body>
+
+</html>
+
+
+

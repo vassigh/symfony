@@ -1,0 +1,28 @@
+wa_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WABlogBundle:Default:index }
+
+wa_blog_article_layout:
+    path:     /article/layout
+    defaults: { _controller: WABlogBundle:Article:layout }
+
+wa_blog_accueil:
+    path:     /page/{page}
+    defaults: { _controller: WABlogBundle:Accueil:index }
+
+wa_blog_article:
+    path:     /article/{article}
+    defaults: { _controller: WABlogBundle:Article:index }
+
+wa_blog_article_edit:
+    path:     /article/{article}/edit
+    defaults: { _controller: WABlogBundle:Article:edit }
+
+wa_blog_article_delete:
+    path:     /article/{article}/delete
+    defaults: { _controller: WABlogBundle:Article:delete }
+
+wa_blog_article_new:
+    path:     /article/{article}/new
+    defaults: { _controller: WABlogBundle:Article:new }
+
