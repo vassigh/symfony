@@ -12,7 +12,22 @@
 			<img class="photo_view_image" src="{{image}}" title="toto" alt="toto"/>
 			<p class="photo_view_description"> {{description|raw}}</p> 
 		</div>
+ 
+
+            <a class="favoris" href="
+                            {{  path('wa_flickr_favoris_flickr', 
+                                {
+                                    'farm'  : farm,
+                                    'id'    : id,
+                                    'server': server,
+                                    'secret': secret
+                                }) 
+                            }}">Ajouter aux favoris</a>
+
+
     </body>
 
 </html>
+
+
 

@@ -104,6 +104,7 @@ textarea{
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 10%;
+    margin-bottom: 50px;
     border-style: double;
     border-width: 12px;
     border-color: black;
@@ -123,4 +124,27 @@ textarea{
 
 .photo_view_image {
     padding-left: 30%;
+}
+
+.favoris{
+    margin-left: 40%;
+}
+
+.afficher_favoris{
+
+}
+a input{
+    margin-top: 10px;
+    margin-left: 100px; 
+    color:red;
+}
+
+.affichage_photos{
+    margin-left: 10%    
+}
+
+.liste_favoris{
+    font-size: 24pt;
+    margin-left: 40%;
+    color:red;
 }

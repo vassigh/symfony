@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>  													
+<html lang="fr">
+
+    </head>
+    <title>TP Flickr infos photo</title>
+    <link rel="stylesheet" href="{{asset('bundles/waflickr/css/flickr.css')}}"> 
+    <meta charset="utf-8">	
+
+    <body>
+		<div class="div_image">
+			<h3 class="liste_favoris">Vos favoris</h3>
+			{% set favoris = app.session.get('favoris') %}
+
+			{% for favori in favoris %}
+					<img class="image" src="{{favori.url}}" 
+				    title="{{favori.title}}" 
+				    alt="{{favori.title}}"/>
+			{% endfor %}
+		</div>
+    </body>
+
+</html>
+
+
+

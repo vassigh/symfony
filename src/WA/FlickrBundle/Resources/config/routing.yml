@@ -3,7 +3,7 @@ wa_flickr_homepage:
     defaults: { _controller: WAFlickrBundle:Default:index }
 
 
-# nouveau controleur hello world
+# controleur hello world
 wa_flickr_helloworld:
     path:     /hello-world/{name}/{age}
     defaults: { _controller: WAFlickrBundle:Hello:index, name: Bryan, age: connais-pas! }
@@ -43,3 +43,12 @@ wa_flickr_search_flickr_post:
 wa_flickr_search_getInfo:
     path:     /photo/{farm}/{id}/{server}/{secret}
     defaults: { _controller: WAFlickrBundle:Search:view }
+
+
+wa_flickr_favoris_flickr:
+    path:     /favoris/{farm}/{id}/{server}/{secret}
+    defaults: { _controller: WAFlickrBundle:Search:favoris }
+
+wa_flickr_affichage_favoris_flickr:
+    path:     /affichage_favoris/
+    defaults: { _controller: WAFlickrBundle:Search:affichage_favoris }

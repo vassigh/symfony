@@ -12,10 +12,8 @@ class SearchController extends Controller
 {
     public function getAction()
     {
-
-    	$searchForm = $this->createSearchForm();
+     	$searchForm = $this->createSearchForm();
         return $this->render('WAFlickrBundle:Search:get.html.twig', array('searchForm' => $searchForm->createView()));
-
     }
 
     public function postAction(Request $request)
@@ -63,7 +61,6 @@ class SearchController extends Controller
 
         $FlickrService = new FlickrService();
         $photo = $FlickrService->getPhotos($id);
-        // var_dump($photo->photo->title->_content);
 
         $titre = $photo->photo->title->_content;
         $description = $photo->photo->description->_content;
@@ -80,7 +77,34 @@ class SearchController extends Controller
 */
  //     $referer = $this->getRequest()->headers->get('referer');
 
-       return $this->render('WAFlickrBundle:Search:view.html.twig', array('image'=>$image, 'titre'=>$titre, 'description'=>$description ) );
+       return $this->render('WAFlickrBundle:Search:view.html.twig', array('image'=>$image, 'titre'=>$titre, 'description'=>$description, 'farm'=>$farm, 'id'=>$id, 'server'=>$server, 'secret'=>$secret ) );
+    }
+
+
+    public function favorisAction(Request $request, $farm, $id, $server, $secret)
+    {
+
+      $photo_object = new FlickrPhoto($farm, $id, $secret, $server, '', 'q' ); 
+
+      $session = $request->getSession();
+      $photos_favoris = $session->get('favoris');
+
+      if( !$photos_favoris ) 
+          $photos_favoris = array();
+
+      array_push($photos_favoris,$photo_object);
+
+      $session->set('favoris', $photos_favoris );
+
+     return $this->redirect ($this->generateUrl('wa_flickr_search_flickr_get')); 
+
+    }
+
+
+    public function affichage_favorisAction()
+    {
+
+      return $this->render('WAFlickrBundle:Search:affichage_favoris.html.twig', array('') );
 
     }
 
